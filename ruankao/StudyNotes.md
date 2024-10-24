@@ -16,7 +16,7 @@
       - [使用spring制作可依赖的jar包](#使用spring制作可依赖的jar包)
       - [现在的技术能力如何进行构建开发和实践](#现在的技术能力如何进行构建开发和实践)
   - [SOLID设计原则](#solid设计原则)
-    - [Single responsiblity principle（单一职责原则）。](#single-responsiblity-principle单一职责原则)
+    - [Single responsiblity principle（单一职责原则）](#single-responsiblity-principle单一职责原则)
     - [Open-Closed principle（开闭原则）](#open-closed-principle开闭原则)
     - [Liskov substitution principle（里氏替换原则）](#liskov-substitution-principle里氏替换原则)
     - [Inteface segregation principle（接口隔离原则）](#inteface-segregation-principle接口隔离原则)
@@ -175,7 +175,7 @@
 --------
 ## SOLID设计原则
 
-### Single responsiblity principle（单一职责原则）。
+### Single responsiblity principle（单一职责原则）
 一个类或模块只负责一个职责或功能。
 
 ### Open-Closed principle（开闭原则）
