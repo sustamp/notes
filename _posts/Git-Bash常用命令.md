@@ -21,12 +21,14 @@
 
 ## 1.建立仓库
 ```
-    mkdir 仓库目录路径
+mkdir 仓库目录路径
 ```
 
 ## 2.初始化仓库
-	cd 仓库路径
-	git init
+```
+cd 仓库路径
+git init
+```
 
 ## 3.添加文件到版本库
 1. 文件要保留在仓库根目录或子目录下  
@@ -36,8 +38,8 @@
 	
 示例：
 ```
-    git add readme.txt
-    git commit -m "add a readme.txt file"
+git add readme.txt
+git commit -m "add a readme.txt file"
 ```
 	
 ## 4.查看仓库变更情况
@@ -47,7 +49,7 @@ git status
 
 ## 5.查看文件变更明细
 ```
-    git diff 文件名
+git diff 文件名
 ```
 
 ## 6.修改文件内容，提交到到版本库
@@ -57,7 +59,7 @@ git status
 `git checkout -- filename`将没有提交的修改内容从"暂存区"撤销。这样，git add命令添加的文件数据就会消失，等待下次`git add`新的内容到缓存区再`git commit`。
 示例：
 ```
-	git checkout -- readme.txt
+git checkout -- readme.txt
 ```
 
 ## 7.查看版本记录
@@ -75,66 +77,66 @@ git status
 
 1. 先确认删除  
     ```
-        git rm filename
+    git rm filename
     ```
 2. 再提交  
     ```
-        git commit -m "remove a filename file"
+    git commit -m "remove a filename file"
     ```
 3. 若删错了，不要执行第2步的commit，用checkout还原
     ```
-        git checkout -- filename
+    git checkout -- filename
     ```
 	
 ## 11.远程仓库
 1. 显示远程仓库  
     ```
-        git remote -v
+    git remote -v
     ```
 2. 添加建立与远程仓库的连接  
     ```
-        git remote add origin 仓库地址
+    git remote add origin 仓库地址
     ```
 3. 第一次把本地库的所有内容推送到远程仓库上  
     ```
-        git push -u origin main
+    git push -u origin main
     ```
 4. 推送最新修改到仓库 (3)步骤完成后  
     ```
-        git push origin main
+    git push origin main
     ```
 
 ## 12.远程库克隆
 1. 将远程仓库克隆到本地仓库  
     ```
-        git clone 仓库地址
+    git clone 仓库地址
     ```
 2. 克隆成功后切换到目标仓库  
     ```
-        cd 项目名
+    cd 项目名
     ```
 3. 在项目仓库上做的任何变更 推送回远程仓库
    - 先添加变更到本地仓库暂存区  
         ```
-            git add 变更文件
+        git add 变更文件
         ```
    - 在实际提交变更到本地仓库  
         ```
-            git commit -m "提交说明"
+        git commit -m "提交说明"
         ```
    - 推送更新到远程仓库  
         ```
-            git push origin main
+        git push origin main
         ```
 			
 ## 13.远程仓库的变更与提交
 1. 先与远程库关联  
     ```
-        git remote add origin 仓库地址
+    git remote add origin 仓库地址
     ```
 2. 若远程库不为空，拉取远程库文件  
     ```
-        git pull origin main
+    git pull origin main
     ```
 
 3. 将本地变更文件`git add`到暂存区
@@ -155,4 +157,4 @@ git status
    git switch 本地分支名
    ```
 5. 提交代码到远程分支。  
-    在目前切换的分支下进行`git add --all`;`git commit -m ""`等操作后再`git push`即可。
+   在目前切换的分支下进行`git add --all`;`git commit -m ""`等操作后再`git push`即可。
