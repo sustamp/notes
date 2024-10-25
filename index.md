@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Notes主页
+title: notes
 ---
 <ul class="posts">
 {% for post in site.posts %}
