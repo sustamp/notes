@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 利用github pages构建个人网站
 ---
 
