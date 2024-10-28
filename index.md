@@ -2,8 +2,11 @@
 layout: default
 title: notes
 ---
-<ul class="posts">
-{% for post in site.posts %}
-  <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{site.baseurl}} {{ post.url }}">{{ post.title }}</a></li>
-{% endfor %}
+## 文章列表
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a><span>    ({{ post.date | date_to_string }})    </span>
+    </li>
+  {% endfor %}
 </ul>
