@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: home
 title: notes
 ---
 ## 文章列表
