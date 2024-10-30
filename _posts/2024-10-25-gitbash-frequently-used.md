@@ -41,74 +41,94 @@ git init
    - 用git commit -m 告诉Git要提交文件了。其中-m是为本次提交附加说明。强烈建议追加-m
 	
 示例：
+
 ```
 git add readme.txt
 git commit -m "add a readme.txt file"
 ```
 	
 ## 4.查看仓库变更情况
+
 ```
 git status
 ```
 
 ## 5.查看文件变更明细
+
 ```
 git diff 文件名
 ```
 
 ## 6.修改文件内容，提交到到版本库
-等同添加文件到版本库，先`git add`，再`git commit -m`。
+等同添加文件到版本库，先  `git add`  ，再  `git commit -m`  。
 ### 6.1.撤销修改
 
-`git checkout -- filename`将没有提交的修改内容从"暂存区"撤销。这样，git add命令添加的文件数据就会消失，等待下次`git add`新的内容到缓存区再`git commit`。
+`git checkout -- filename`  将没有提交的修改内容从"暂存区"撤销。这样，git add命令添加的文件数据就会消失，等待下次  `git add`  新的内容到缓存区再  `git commit`  。
 示例：
+
 ```
 git checkout -- readme.txt
 ```
 
 ## 7.查看版本记录
-`git log`或`git log -pretty=oneline`
+
+`git log`  或  `git log -pretty=oneline`  
 
 ## 8.版本回退
-`git reset --hard HEAD~迭代次(1-N)`或`git reset --hard commitid`
+
+  `git reset --hard HEAD~迭代次(1-N)`  或  `git reset --hard commitid`
 
 ## 9.查看历史命令记录
-`git reflog`
+
+`git reflog`  
 
 (*ps：显示内容从上到下是按时间降序的*)
 	
 ## 10.删除文件
 
-1. 先确认删除  
+1. 先确认删除 
+    
     ```
     git rm filename
     ```
+    
 2. 再提交  
+   
     ```
     git commit -m "remove a filename file"
     ```
+    
 3. 若删错了，不要执行第2步的commit，用checkout还原
+    
     ```
     git checkout -- filename
     ```
 	
 ## 11.远程仓库
 1. 显示远程仓库  
+    
     ```
     git remote -v
     ```
+    
 2. 添加建立与远程仓库的连接  
+    
     ```
     git remote add origin 仓库地址
     ```
+    
 3. 第一次把本地库的所有内容推送到远程仓库上  
+    
     ```
     git push -u origin main
     ```
+    
 4. 推送最新修改到仓库 (3)步骤完成后  
+    
     ```
     git push origin main
     ```
+    
 
 ## 12.远程库克隆
 1. 将远程仓库克隆到本地仓库  
