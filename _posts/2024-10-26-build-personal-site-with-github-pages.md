@@ -36,7 +36,7 @@ GitHub个人站点将为你提供免费域名以供访问。域名格式为：ht
 - 在**Build And Deplovment**中点击**Source**下拉框，选择"Deploy from a branch"，Branch 选择 main。
 - 点击Save保存。
   
-<img src="../assets/pictures/GitHub-Settings-1.png" />
+<img src="/notes/assets/pictures/GitHub-Settings-1.png" />
 
 >启用Github Pages会创建仓库的部署。在等待部署期间，GitHub Actions可能需要长达一分钟的时间才能响应，需要耐心等待。
 >tips：在Pages设置的顶部，会出现你的网站链接，复制链接或者点击"Visit Site"按钮可以访问你的GitHub Pages站点。
