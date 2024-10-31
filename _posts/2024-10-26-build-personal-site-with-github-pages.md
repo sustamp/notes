@@ -3,6 +3,18 @@ layout: post
 title: 利用github pages构建个人网站
 ---
 
+目录：
+- [1.创建仓库](#1创建仓库)
+- [2.启用Github pages](#2启用github-pages)
+- [2.定制主题](#2定制主题)
+  - [2. 在仓库根目录下新建一个\_config.yml文件。](#2-在仓库根目录下新建一个_configyml文件)
+  - [2. 编写index.md文件，编写主页内容。](#2-编写indexmd文件编写主页内容)
+  - [3. 定制布局。](#3-定制布局)
+- [3.编写博客文章](#3编写博客文章)
+  - [1. 创建博客目录\_posts。](#1-创建博客目录_posts)
+  - [2. 主页显示文章](#2-主页显示文章)
+
+
 本文介绍如何使用GitHub创建个人的网站或博客。在此之前，请确保你已经拥有一个github账号，否则请访问<a href="https://github.com/" target="_blank">GitHub</a>注册一个账号。
 
 **Tips**  
@@ -25,17 +37,21 @@ GitHub个人站点将为你提供免费域名以供访问。域名格式为：`h
 那么接下来都将以个人站点的仓库作为后续内容的讲述标本。
 
 2. 创建主页文件index.html  
-   我们可以在仓库新建一个文件命名为：index.html，这是主页文件。文件内容可以随便填写，比如"Hello world!"，然后点击提交。此时我们在浏览器访问个人站点或项目站点就可以看到这个页面上的内容了。站点地址默认会读index.html/index.md/README.md等文件的内容。
-
+   我们可以在仓库新建一个文件Create new file，命名为：index.html，这是主页文件。文件内容可以随便填写，比如"Hello world!"，然后点击提交。此时我们在浏览器访问个人站点或项目站点就可以看到这个页面上的内容了。
+   站点地址默认会读index.html/index.md/README.md等文件的内容。
 
 ## 2.启用Github pages
 
-- 点击仓库的Settings菜单进入配置页。
+- 点击仓库的**Settings**菜单进入配置页。
 - 选择左侧栏中**Code and automation**下的Pages进入GitHub Pages设置页。
-- 在**Build And Deplovment**中点击**Source**下拉框，选择"Deploy from a branch"，Branch 选择 main。
+- 使用main分支部署。在**Build And Deplovment**中点击**Source**下拉框，选择"Deploy from a branch"，Branch 选择 main。
 - 点击Save保存。
   
 <img src="/notes/assets/pictures/GitHub-Settings-1.png" />
+
+你也可以选择**其它分支**进行部署，这要求你提前新建好分支。比如新建一个`gh-pages`分支。
+
+**GitHub Actions** 是另外一个可选的部署方式。它可以进行代码的同步和部署，如果你使用GitHub Actions，可以配置触发条件和部署信息。当条件触发时，提交的代码会同步到分支上，然后在分支进行站点的部署和发布。
 
 >启用Github Pages会创建仓库的部署。在等待部署期间，GitHub Actions可能需要长达一分钟的时间才能响应，需要耐心等待。  
 注意：在Pages设置的顶部，会出现你的网站链接，复制链接或者点击"Visit Site"按钮可以访问你的GitHub Pages站点。
@@ -46,7 +62,7 @@ GitHub个人站点将为你提供免费域名以供访问。域名格式为：`h
 这里使用GitHub Pages推荐的jekyll主题来定制个人网站的风格。
 
 ### 2. 在仓库根目录下新建一个_config.yml文件。  
-在仓库**Code**页中添加一个文件Add file -> Create new file，上方填写文件名_config.yml，填写如下内容：
+在仓库**Code**菜单中添加一个文件Add file -> Create new file，上方填写文件名`_config.yml`，填写如下内容：
 
 ```
 remote_theme: pages-themes/cayman@v0.2.0 #这里选择你要使用的远程主题
@@ -205,5 +221,6 @@ Hello world！
 
 这样，jekyll就会遍历_posts目录，检索其下的文章内容，并显示在主页下，你就可以选择你的文章访问了。
 
+访问前关注一下仓库中**Actions**内容，查看部署进度，部署成功后，新的内容才会生成。
 
 
