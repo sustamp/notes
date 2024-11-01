@@ -3,18 +3,6 @@ layout: post
 title: 利用github pages构建个人网站
 ---
 
-目录：
-- [1.创建仓库](#1创建仓库)
-- [2.启用Github pages](#2启用github-pages)
-- [2.定制主题](#2定制主题)
-  - [2. 在仓库根目录下新建一个\_config.yml文件。](#2-在仓库根目录下新建一个_configyml文件)
-  - [2. 编写index.md文件，编写主页内容。](#2-编写indexmd文件编写主页内容)
-  - [3. 定制布局。](#3-定制布局)
-- [3.编写博客文章](#3编写博客文章)
-  - [1. 创建博客目录\_posts。](#1-创建博客目录_posts)
-  - [2. 主页显示文章](#2-主页显示文章)
-
-
 本文介绍如何使用GitHub创建个人的网站或博客。在此之前，请确保你已经拥有一个github账号，否则请访问<a href="https://github.com/" target="_blank">GitHub</a>注册一个账号。
 
 **Tips**  
@@ -64,10 +52,10 @@ GitHub个人站点将为你提供免费域名以供访问。域名格式为：`h
 ### 2. 在仓库根目录下新建一个_config.yml文件。  
 在仓库**Code**菜单中添加一个文件Add file -> Create new file，上方填写文件名`_config.yml`，填写如下内容：
 
-```
+```yaml
 remote_theme: pages-themes/cayman@v0.2.0 #这里选择你要使用的远程主题
 plugins:
-- jekyll-remote-theme # add this line to the plugins list if you already have one
+- jekyll-remote-theme # 使用远程主题需要引入这个插件
 title: Sustamp学习笔记
 description: #这里输入你的主页描述
 #baseUrl是定义基础路径，个人站点默认是"/"，项目站点则需要在这里设置"/仓库名"。
@@ -82,27 +70,26 @@ Commit提交后保存。
 
 但这里我们用jekyll主题面向非开发者编写主页。将index.html改名为index.md。在原有内容的顶部增加如下代码:  
    
-```
+```markdown
 ---
 layout: defalut
 title: 你的主页标题 #输入你的页面标题
 ---
 ```
 
->jekyll是用上、下的3个分隔符号`---`作为主题设置区域。
+>jekyll是量行3个分隔符号`---`作为虚线，是**YAML**头信息的识别区域。头信息必须在文件的开始部分，并且需要按照 YAML 的格式写在两行三虚线之间。任何只要包含 YAML 头信息的文件在 Jekyll 中都能被当做一个特殊的文件来处理
 
 ### 3. 定制布局。  
 在上述第2点我们引用了`layout: defalut`的布局。这其实是使用的是`_layout`目录下的`default.html`文件。
 
-现在我们创建_layout目录并新建default.html。在仓库新建文件，输入`/_layout/default.html`，这回同时创建目录`_layout`，并新增`default.html`文件，文件内容如下：
+现在我们创建_layout目录并新建default.html。在仓库新建文件，输入`/_layout/default.html`，这会同时创建目录`_layout`，并新增`default.html`文件，文件内容如下：
 
-```
+```markdown
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
     <meta charset="UTF-8">
 
-{% seo %}
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -142,36 +129,15 @@ title: 你的主页标题 #输入你的页面标题
 
 这是GitHub Pages **cayman**主题的html模板，直接复制填写即可。有关cayman主题的官方内容请访问：<a href="https://github.com/pages-themes/cayman" target="_blank">https://github.com/pages-themes/cayman</a>。
 
-**default.html**是布局模板中的一种，我们还可以定义page.html, post.html，home.html等页面模板。然后在md文件中选择使用哪种模板。
+jeykll目录结构中的`_layouts`目录是存放布局文件的。**default.html**是布局模板中的一种，我们还可以定义page.html, post.html，home.html等页面模板。然后在md文件的头信息中选择使用哪种布局模板。
 
 为了后续的博客文章编写，我们在定义一个post.html模板。在`_layout`目录下继续新增一个`post.html`文件。内容如下：
 
-```
+```markdown
 ---
 layout: default
 ---
-<article itemscope itemtype="http://schema.org/BlogPosting">
-
-  <!-- <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1>
-    <p class="post-meta">
-      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        {% assign date_format = site.cayman-blog.date_format | default: "%b %-d, %Y" %}
-        {{ page.date | date: date_format }}
-      </time>
-      {% if page.author %}
-        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
-      {% endif %}</p>
-  </header> -->
-
-  <div itemprop="articleBody">
-    {{ content }}
-  </div>
-
-  {% if site.disqus.shortname %}
-    {% include disqus_comments.html %}
-  {% endif %}
-</article>
+under construction...
 ```
 
 这模板会在之后的博客文章中用到。
@@ -183,9 +149,9 @@ layout: default
 
 jeykll要求将博客文章放置在`_posts`目录下，目录下的文章文件默认要求`yyyy-MM-dd-title.md`格式命名。
 
-在仓库继续新增文件，输入`/_posts/2024-10-31-my-first-post.md`，就可以创建_posts目录，同时创建了一个2024-10-31-my-first-post.md文件，它将是我们的第一篇博客文章。文章内容可随便填写，但主题区域需要一些基本设置：
+在目标仓库继续新增文件，输入`/_posts/2024-10-31-my-first-post.md`，就可以创建_posts目录，同时创建了一个2024-10-31-my-first-post.md文件，它将是我们的第一篇博客文章。文章内容可随便填写，但主题区域需要一些基本设置：
 
-```
+```markdown
 ---
 layout: post
 title: 我的第一篇博客 
@@ -201,7 +167,7 @@ title: 我的第一篇博客
 
 调整我们的index.md内容，填写一代代码：
 
-```
+```markdown
 ---
 layout: default
 title: 你的主页标题
