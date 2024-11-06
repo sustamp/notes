@@ -23,12 +23,13 @@ layout: default
     {% include disqus_comments.html %}
   {% endif %}
 </article>
+<script src="outline.min.js"></script>
 <script>
   (function(){
     const defaults = Outline.DEFAULTS
     let outline
 
-    defaults.homepage = '/notes-blog/index.html'
+    defaults.homepage = '/notes/index.html'
     defaults.stickyHeight = 86
     defaults.placement = 'rtl'
     defaults.closeOnClickModal = false
