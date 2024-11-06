@@ -175,7 +175,9 @@ css样式可以直接在`<head>`标签引入，但js可能要在`<body>`标签�
 </html>
 ```
 
-这是使用浏览器打开demo.html文件即可看到效果。
+现在，使用浏览器打开demo.html文件即可看到效果。
+
+<img src="/notes/assets/pictures/demo-outlinejs.png" alt="demo-outlinejs">
 
 ---
 ## API文档
