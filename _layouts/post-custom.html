@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default-custom
 ---
 <article itemscope itemtype="http://schema.org/BlogPosting">
 
@@ -23,18 +23,3 @@ layout: default
     {% include disqus_comments.html %}
   {% endif %}
 </article>
-<script src="/assets/js/outline.min.js"></script>
-<script>
-  (function(){
-    const defaults = Outline.DEFAULTS
-    let outline
-
-    defaults.homepage = '/notes/index.html'
-    defaults.stickyHeight = 86
-    defaults.placement = 'rtl'
-    defaults.closeOnClickModal = false
-    defaults.showNavModalFirst = true
-    outline = new Outline(defaults)
-    outline.reload()
-  })()
-</script>
